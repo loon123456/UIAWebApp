@@ -1,0 +1,45 @@
+﻿@model IEnumerable<UIAWebApp.Models.Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightDepart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightArrival)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightDepart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightArrival)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FlightNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FlightNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FlightNumber })
+        </td>
+    </tr>
+}
+
+</table>

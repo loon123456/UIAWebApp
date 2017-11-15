@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UIAWebApp.Models.BookingTicket>
+
+@{
+    ViewBag.Title = "Book Ticket";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Airport.AirportName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirTicketDetail.Origin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight.FlightDepart)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Airport.AirportName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirTicketDetail.Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.FlightDepart)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingID })
+        </td>
+    </tr>
+}
+
+</table>

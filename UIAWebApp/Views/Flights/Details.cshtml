@@ -1,0 +1,42 @@
+﻿@model UIAWebApp.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightDepart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightDepart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightArrival)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightArrival)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FlightNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
